@@ -8,7 +8,65 @@
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    
+    <h1>Калькулятор расчета стоимости</h1>
+    <form action="">
+        <div>
+            <label for="brand">Марка автомобиля</label>
+            <select name="brand" id=""></select>
+        </div>
+        <div>
+            <label for="model">Модель автомобиля</label>
+            <select name="model" id=""></select>
+        </div>
+        <div>
+            <label for="">Тип топлива</label>
+            <div>
+                <input type="radio"name="fuel">
+                <label for="fuel">бензин</label>
+                <input type="radio"name="fuel">
+                <label for="fuel">дизель</label>
+                <input type="radio"name="fuel">
+                <label for="fuel">газ</label>
+                <input type="radio"name="fuel">
+                <label for="fuel">электричество</label>
+            </div>
+        </div>
+        <div>
+            <label for="volume">Объем двигателя, л.</label>
+            <input type="number" name="volume">
+        </div>
+        <div>
+            <label for="">Состояние</label>
+            <div>
+                <input type="radio" name="condition">
+                <label for="condition">новый</label>
+                <input type="radio" name="condition">
+                <label for="condition">подержанный</label>
+                <div>
+                    <label for="">Количество владельцев</label>
+                    <div>
+                        <input type="radio" name="owner">
+                        <label for="owner">1-2</label>
+                        <input type="radio" name="owner">
+                        <label for="owner">3 и более</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="">Способ оплаты</label>
+            <div>
+                <input type="radio" name="cash">
+                <label for="cash">наличные</label>
+                <input type="radio" name="card">
+                <label for="card">банковская карта</label>
+                <input type="radio" name="banktransfer">
+                <label for="banktransfer">счет на юридическое лицо</label>
+            </div>
+        </div>
+    </form>
+    <button>Рассчитать стоимость</button>
+    <div></div>
     <script src="/index.js"></script>
 </body>
 </html>
