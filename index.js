@@ -30,7 +30,7 @@ let modelAutoSelect = document.getElementById('modelAutoSelect');
 const ownerQuantity = document.querySelector('.owner');
 const button = document.querySelector('.button');
 const result = document.querySelector('.result');
-
+const cleanButton = document.querySelector('.clean');
 
 let arrPriceCalc = [];
 
@@ -52,6 +52,7 @@ brandSelect.addEventListener('change',showModelAuto);
 modelAutoSelect.addEventListener('change',getPriceToArray);
 usedRadiobox.addEventListener('change',showOwner);
 button.addEventListener('click',showResultPrice);
+cleanButton.addEventListener('click',cleanForm);
 
 function showModelAuto(event) {
     switch (event.target.value) {
@@ -99,44 +100,91 @@ function showResultPrice(event) {
         arrPriceCalc[1] = arrPriceCalc[0]*1.3
     }
 
-    if (petrolRadiobox.checked = true) {
+    if (petrolRadiobox.checked) {
         arrPriceCalc[2] = arrPriceCalc[1]*1
-    } else if (dieselRadiobox.checked = true) {
+    } else if (dieselRadiobox.checked) {
         arrPriceCalc[2] = arrPriceCalc[1]*1.1
-    } else if (gasRadiobox.checked = true) {
+    } else if (gasRadiobox.checked) {
         arrPriceCalc[2] = arrPriceCalc[1]*1.2
-    } else if (electricityRadiobox.checked = true) {
+    } else if (electricityRadiobox.checked) {
         arrPriceCalc[2] = arrPriceCalc[1]*1.3
     } else {
         alert('Выберите тип топлива!')
     }
 
-    if (usedRadiobox.checked = true) {
-        if (fewRadiobox.checked = true) {
+    if (usedRadiobox.checked) {
+        if (fewRadiobox.checked) {
             arrPriceCalc[3] = arrPriceCalc[2]*0.8
-        } else if (manyRadiobox.checked = true) {
+        } else if (manyRadiobox.checked) {
             arrPriceCalc[3] = arrPriceCalc[2]*0.6
         } else {
             alert('Выберите количество владельцев!')
         }            
-    } else if (newRadiobox.checked = true) {
+    } else if (newRadiobox.checked) {
         arrPriceCalc[3] = arrPriceCalc[2]*1
     } else {
         alert('Выберите состояние!')
     }
 
-    if (cashRadiobox.checked = true) {
+    if (cashRadiobox.checked) {
         arrPriceCalc[4] = arrPriceCalc[3]*1
-    } else if ((cardRadiobox.checked = true)||(companyRadiobox.checked = true)) {
+    } else if ((cardRadiobox.checked)||(companyRadiobox.checked)) {
         arrPriceCalc[4] = arrPriceCalc[3]*1.1
     } else {
         alert('Выберите способ оплаты!')
     }
 
 
-    // form.reset();
-
     console.log(arrPriceCalc);
 
     result.textContent = arrPriceCalc[4];
 }
+
+function cleanForm(event) {
+    form.reset();
+    result.textContent = '';
+}
+
+
+/* 
+function showResultPrice(event) {
+    event.preventDefault();
+    if (volumeInput.value < 2) {
+        arrPriceCalc[1] = arrPriceCalc[0]*1
+    } else {
+        arrPriceCalc[1] = arrPriceCalc[0]*1.3
+    }
+
+    if (petrolRadiobox.checked) {
+        arrPriceCalc[2] = arrPriceCalc[1]*1
+    } else if (dieselRadiobox.checked) {
+        arrPriceCalc[2] = arrPriceCalc[1]*1.1
+    } else if (gasRadiobox.checked) {
+        arrPriceCalc[2] = arrPriceCalc[1]*1.2
+    } else if (electricityRadiobox.checked) {
+        arrPriceCalc[2] = arrPriceCalc[1]*1.3
+    } else {
+        alert('Выберите тип топлива!')
+    }
+
+    if (usedRadiobox.checked) {
+        if (fewRadiobox.checked) {
+            arrPriceCalc[3] = arrPriceCalc[2]*0.8
+        } else if (manyRadiobox.checked) {
+            arrPriceCalc[3] = arrPriceCalc[2]*0.6
+        } else {
+            alert('Выберите количество владельцев!')
+        }            
+    } else if (newRadiobox.checked) {
+        arrPriceCalc[3] = arrPriceCalc[2]*1
+    } else {
+        alert('Выберите состояние!')
+    }
+
+    if (cashRadiobox.checked) {
+        arrPriceCalc[4] = arrPriceCalc[3]*1
+    } else if ((cardRadiobox.checked)||(companyRadiobox.checked)) {
+        arrPriceCalc[4] = arrPriceCalc[3]*1.1
+    } else {
+        alert('Выберите способ оплаты!')
+    } */
