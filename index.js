@@ -39,6 +39,7 @@ const cashCheckbox = document.getElementById('cash');
 const cardCheckbox = document.getElementById('card');
 const companyCheckbox = document.getElementById('company');
 
+
 brandSelect.addEventListener('change',showModelAuto);
 modelAutoSelect.addEventListener('change',getPriceToArray);
 
