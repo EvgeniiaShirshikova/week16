@@ -24,11 +24,14 @@ const mercedesModels = {
     'S-class': 120000
 }
 
-let form = document.querySelector('.form')
-let brandSelect = document.getElementById('brandSelect')
-let modelAutoSelect = document.getElementById('modelAutoSelect')
+let form = document.querySelector('.form');
+let brandSelect = document.getElementById('brandSelect');
+let modelAutoSelect = document.getElementById('modelAutoSelect');
+
+let arrPriceCalc = [];
 
 brandSelect.addEventListener('change',showModelAuto);
+modelAutoSelect.addEventListener('change',getPriceToArray);
 
 function showModelAuto(event) {
     switch (event.target.value) {
@@ -44,15 +47,23 @@ function showModelAuto(event) {
         case 'Mercedes':
             getObjModelRenderPage(mercedesModels,modelAutoSelect)
             break
-    }
+        default:
+            arrPriceCalc
+            break
+    }    
 }
 
 function getObjModelRenderPage(obj, elementPage) {
-    elementPage.innerHTML = '';
+    elementPage.innerHTML = '<option hidden>модель</option>';
     for(key in obj){
         const option = document.createElement('option');
         option.value = obj[key];
         option.innerText = key;
         elementPage.appendChild(option);
     }
+}
+
+function getPriceToArray(event) {
+    arrPriceCalc[0] = event.target.value;
+    console.log(arrPriceCalc);
 }
