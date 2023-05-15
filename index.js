@@ -30,6 +30,15 @@ let modelAutoSelect = document.getElementById('modelAutoSelect');
 
 let arrPriceCalc = [];
 
+const volumeInput = document.getElementById('volume');
+const newCheckbox = document.getElementById('new');
+const usedCheckbox = document.getElementById('used');
+const fewCheckbox = document.getElementById('few');
+const manyCheckbox = document.getElementById('many');
+const cashCheckbox = document.getElementById('cash');
+const cardCheckbox = document.getElementById('card');
+const companyCheckbox = document.getElementById('company');
+
 brandSelect.addEventListener('change',showModelAuto);
 modelAutoSelect.addEventListener('change',getPriceToArray);
 
