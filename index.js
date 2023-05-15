@@ -165,5 +165,6 @@ function showResultPrice(event) {
 function cleanForm(event) {
     form.reset();
     result.textContent = '';
+    arrPriceCalc = [];
 }
 
