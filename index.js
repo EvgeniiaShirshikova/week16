@@ -68,7 +68,7 @@ function getObjModelRenderPage(obj, elementPage) {
         const option = document.createElement('option');
         option.value = obj[key];
         option.innerText = key;
-        elementPage.appendChild(option);
+        elementPage.append(option);
     }
 }
 
