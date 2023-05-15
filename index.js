@@ -27,8 +27,10 @@ const mercedesModels = {
 let form = document.querySelector('.form');
 let brandSelect = document.getElementById('brandSelect');
 let modelAutoSelect = document.getElementById('modelAutoSelect');
-const result = document.querySelector('.result')
-const ownerQuantity = document.querySelector('.owner')
+const ownerQuantity = document.querySelector('.owner');
+const button = document.querySelector('.button');
+const result = document.querySelector('.result');
+
 
 let arrPriceCalc = [];
 
@@ -49,6 +51,7 @@ const companyRadiobox = document.getElementById('company');
 brandSelect.addEventListener('change',showModelAuto);
 modelAutoSelect.addEventListener('change',getPriceToArray);
 usedRadiobox.addEventListener('change',showOwner);
+button.addEventListener('click',showResultPrice);
 
 function showModelAuto(event) {
     switch (event.target.value) {
@@ -82,14 +85,14 @@ function getObjModelRenderPage(obj, elementPage) {
 
 function getPriceToArray(event) {
     arrPriceCalc[0] = event.target.value;
-    console.log(arrPriceCalc);
 }
 
 function showOwner(event) {
     ownerQuantity.classList.remove('none')
 }
 
-function getPrice() {
+function showResultPrice(event) {
+    event.preventDefault();
     if (volumeInput.value < 2) {
         arrPriceCalc[1] = arrPriceCalc[0]*1
     } else {
@@ -131,4 +134,9 @@ function getPrice() {
     }
 
 
+    // form.reset();
+
+    console.log(arrPriceCalc);
+
+    result.textContent = arrPriceCalc[4];
 }
